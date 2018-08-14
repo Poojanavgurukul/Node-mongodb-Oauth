@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style type="text/css">
+		body{
+			font-family: arial;
+			margin: 0;
+		}
+		nav {
+			background: lightblue;
+			padding: 20px 10px ;
+		}
+		nav ul {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 0;
+		}
+		nav li {
+			list-style-type: none;
+			display: inline-block;
+			margin: 0 10px 0 0;
+		}
+		nav a{
+			color:black;
+			font-size: 18px;
+			background: skyblue;
+			text-decoration: none;
+			padding: 10px;
+			display: block;
+		}
+		header{
+			max-width: 960px;
+			margin: 30px auto;
+			padding: 0 10px;
+			color:black;
+		}
+
+		.google-btn{
+			color:black;
+			text-decoration: none;
+			font-size: 18px;
+			padding: 10px;
+			background:skyblue;
+			margin: 0 0 0 170px ;
+		}
+	</style>	
+</head>
+<body>
+<nav>
+	<ul>
+			<% if(user) {%>
+			<li><a href="/auth/logout">Logout</a></li>
+			<%} else { %>
+			<li><a href="/auth/login">Login</a></li>
+			<%} %>
+			<li><a href="/">Home page</a></li>
+	</ul>
+</nav>
+<header>
+	<h1>Login using ......</h1>
+</header>
+<main>
+	<a  class =" google-btn" href="/auth/google">Google+</a>
+</main>
+</body>
+</html>

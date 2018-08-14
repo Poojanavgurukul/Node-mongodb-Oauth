@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Git hub</title>
+	<style type="text/css">
+		body{
+			font-family: arial;
+			margin: 0;
+		}
+		nav {
+			background: lightblue;
+			padding: 20px 10px ;
+		}
+		nav ul {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 0;
+		}
+		nav li {
+			list-style-type: none;
+			display: inline-block;
+			margin: 0 10px 0 0;
+		}
+		nav a{
+			color:black;
+			font-size: 18px;
+			background: skyblue;
+			text-decoration: none;
+			padding: 10px;
+			display: block;
+		}
+		header ,p{
+			max-width: 960px;
+			margin: 30px auto;
+			padding: 0 10px;
+			color:black;
+		}
+		.image{
+			width:200px;
+			max-width:960px;
+			margin: 30px auto 0 150px;
+			padding: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<% if(user) {%>
+			<li><a href="/auth/logout">Logout</a></li>
+			<%} else { %>
+			<li><a href="/auth/login">Login</a></li>
+			<%} %>
+			<li><a href="/">Home page</a></li>
+		</ul>
+	</nav>
+	<header>
+		<h2>Welcome to your profile, <%= user.username%></h2>
+	</header>
+	<main>
+		<img src="<%=user.thumbnail%>" class="image"/>
+		<p>extra information about you.</p>
+	</main>
+</body>
+</html>
